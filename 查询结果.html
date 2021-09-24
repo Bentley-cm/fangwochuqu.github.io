@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://shenziyao.net3v.net/ -->
+<html lang="zh-CN" class="eye-protector-processed" style="background-color: rgb(193, 230, 198);"><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, maximum-scale=1">
+    <title>查询结果</title>
+    <style>
+        .container img {
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .container .time {
+            position: fixed;
+            font-size: 18px;
+            color: rgb(135, 179, 244);
+            font-weight: 600;
+            width: 198px;
+            left: 50%;
+            margin-left: -95px;
+            top: 67%;
+        }
+        
+        .container .name {
+            font-size: 20px;
+            font-weight: 600;
+            position: fixed;
+            color: white;
+            left: 80px;
+            top: 25px;
+            border: none;
+            background-color: transparent;
+        }
+        
+        .container .location {
+            position: fixed;
+            font-size: 16px;
+            color: rgb(153, 153, 153);
+            width: 100px;
+            left: 50%;
+            margin-left: -55px;
+            top: 62%;
+            border: none;
+            background-color: transparent;
+        }
+        
+        .name::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: white;
+        }
+        
+        .name:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: white;
+        }
+        
+        .name::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: white;
+        }
+        
+        .name:-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: white;
+        }
+        
+        .location::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: rgb(172, 172, 172);
+        }
+        
+        .location:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: rgb(172, 172, 172);
+        }
+        
+        .location::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: rgb(172, 172, 172);
+        }
+        
+        .location:-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: rgb(172, 172, 172);
+        }
+    </style>
+</head>
+
+<body class="eye-protector-processed vsc-initialized" data-new-gr-c-s-check-loaded="14.994.0" data-gr-ext-installed="" style="background-color: rgb(193, 230, 198); transition: background-color 0.3s ease 0s;">
+    <div class="container">
+        <input type="text" placeholder="   蔡徐坤" class="name">
+        <input type="text" placeholder="江宁校区南门" class="location">
+        <span class="time">2021年09月24日 19:09</span>
+
+        <img src="https://i.postimg.cc/Vv76m8bJ/2.jpg">
+    </div>
+
+    <script>
+        var time = document.querySelector('.time');
+
+        setInterval(gettime, 1000);
+
+        function gettime() {
+            var today = new Date();
+            var y = today.getFullYear();
+            var m = today.getMonth();
+            var d = today.getDate();
+            var h = today.getHours();
+            var i = today.getMinutes();
+            m = m + 1;
+            d = checkTime(d);
+            m = checkTime(m);
+            i = checkTime(i);
+            time.innerHTML = y + "年" + m + "月" + d + "日" + " " + h + ":" + i;
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
